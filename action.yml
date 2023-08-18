@@ -1,0 +1,9 @@
+name: "Balena's S3 deploy"
+description: "Deploy to balena S3 OS image storage"
+author: alexgg
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: 'box'
+  color: 'green'
