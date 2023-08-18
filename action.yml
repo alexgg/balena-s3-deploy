@@ -1,0 +1,36 @@
+name: "Balena's S3 deploy"
+description: "Deploy to balena S3 OS image storage"
+author: alexgg
+branding:
+  icon: 'upload-cloud'
+  color: 'green'
+inputs:
+  aws_bucket:
+    description: "S3 bucket to upload to"
+    required: true
+  aws_path:
+    description: "Target path in the S3 bucket to upload to."
+    required: false
+  source_path:
+    description: "Local file or directory path to upload from."
+    required: true
+  aws_access_key:
+    description: "S3 access key ID"
+    required: true
+  aws_secret_key:
+    description: "S3 secret key ID"
+    required: true
+  aws_region:
+    description: "S3 region to update to"
+    required: true
+    default: "us-east-1"
+  aws_policy:
+    description: "S3 access policy to use. Can be private | public-read"
+    required: true
+    default: "private"
+  aws_endpoint:
+    description: ""
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
